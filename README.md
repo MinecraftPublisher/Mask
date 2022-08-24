@@ -9,31 +9,56 @@ These three types of people try to help reduce the disease in the whole society 
 
 ## 1. Installation
 
-```
+### Download requirements
+```bash
 git clone https://github.com/mhnasajpour/Mask.git
 cd Mask
 
 pip install virtualenv
 python -m virtualenv venv
-venv\Scripts\activate
+```
 
+### Activate environment
+#### Windows
+```bash
+venv\Scripts\activate
+```
+#### Linux
+```bash
+chmod +x ./venv/bin/activate
+./venv/bin/activate
+```
+
+### Install requirements
+```bash
 pip install -r requirements.txt
 ```
-> Now you have to copy file in the same destination.
+
+### Copy environment secrets
+#### Windows
 ```
-xcopy backend\config\.env-sample backend\config\.env
+xcopy backend\config\sample.env backend\config\.env
 ```
-> Go to path `backend\config\.env` and fill this file with your information.
+#### Linux
+```
+cp backend/config/sample.env backend/config/.env
+```
+
+### Configuration
+Go to `backend > config > .env` and edit the requested fields.
+
+### Start the server
 ```
 cd backend
 python manage.py migrate
 python manage.py runserver
 ```
-The project was run. You can see it by going to the URL http://127.0.0.1:8000/
+You can now visit the website by going to the url you provided.
 
 ## 2. APIs
-To see the list of APIs, you can refer to URL http://127.0.0.1:8000/swagger/
+To see the list of APIs, you can refer to URL http://YOUR_PROVIDED_URL/swagger/
 
+### Swagger images
 ![AUTH](https://github.com/mhnasajpour/Mask/blob/main/APIs/Auth_APIs.png)
 ![USER](https://github.com/mhnasajpour/Mask/blob/main/APIs/User_APIs.png)
 ![PLACE](https://github.com/mhnasajpour/Mask/blob/main/APIs/Place_APIs.png)
